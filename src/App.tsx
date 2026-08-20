@@ -8,9 +8,20 @@ import leftLegCard from '@/cards/exodia-left-leg.jpg'
 import rightLegCard from '@/cards/exodia-right-leg.jpg'
 import littleDCard from '@/cards/little-d.jpg'
 
-function PieceCard({ src, alt }: { src: string; alt: string }) {
+function PieceCard({
+  src,
+  alt,
+  onClick,
+}: {
+  src: string
+  alt: string
+  onClick?: () => void
+}) {
   return (
-    <div className="w-40 overflow-hidden rounded-xl border-2 border-dashed border-muted-foreground/30 sm:w-48">
+    <div
+      onClick={onClick}
+      className={`w-40 overflow-hidden rounded-xl border-2 border-dashed border-muted-foreground/30 sm:w-48 ${onClick ? 'cursor-pointer' : ''}`}
+    >
       <img src={src} alt={alt} className="aspect-[3/4] w-full object-cover" />
     </div>
   )
@@ -44,7 +55,11 @@ export default function App() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <PieceCard src={rightLegCard} alt="Right Leg of the Forbidden One" />
-          <PieceCard src={littleDCard} alt="Little D" />
+          <PieceCard
+            src={littleDCard}
+            alt="Little D"
+            onClick={() => window.open('https://www.youtube.com/watch?v=Aq5WXmQQooo', '_blank')}
+          />
           <PieceCard src={leftLegCard} alt="Left Leg of the Forbidden One" />
         </div>
       </main>
