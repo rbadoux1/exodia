@@ -6,6 +6,7 @@ import leftArmCard from '@/cards/exodia-left-arm.jpg'
 import rightArmCard from '@/cards/exodia-right-arm.jpg'
 import leftLegCard from '@/cards/exodia-left-leg.jpg'
 import rightLegCard from '@/cards/exodia-right-leg.jpg'
+import littleDCard from '@/cards/little-d.jpg'
 
 function PieceCard({ src, alt }: { src: string; alt: string }) {
   return (
@@ -43,6 +44,7 @@ export default function App() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <PieceCard src={rightLegCard} alt="Right Leg of the Forbidden One" />
+          <PieceCard src={littleDCard} alt="Little D" />
           <PieceCard src={leftLegCard} alt="Left Leg of the Forbidden One" />
         </div>
       </main>
